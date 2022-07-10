@@ -1,9 +1,16 @@
 const express = require('express');
 const mongodb = require('mongodb').MongoClient;
+const db = require('./config/connection');
+const routes = require('./routes');
+const { User, Thought, Reaction } = require('./models');
+
 const data = require('./models/data');
 
 const app = express();
 const port = 3001;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 const connectionStringURI = `mongodb://localhost:27017/SN_db`;
 
