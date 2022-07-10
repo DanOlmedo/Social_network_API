@@ -30,4 +30,4 @@ for (let i = 0; i < userNames.length; i++) {
     users.push(thoughts[i]);
 };
 
-module.exports = users;
+module.exports = { users };

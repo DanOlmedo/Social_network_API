@@ -17,7 +17,7 @@ Reaction.create(
        reactionBody : 'Reaction test text',
        username : 'TestReactionUser' 
     },
-    (err) => (err ? handleError(err) : console.log('Created new document'))
+    (err) => (err ? handleError(err) : console.log('Created new reaction'))
 );
 
 module.exports = Reaction;

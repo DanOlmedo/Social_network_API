@@ -12,14 +12,14 @@ const User = mongoose.model('User', userSchema);
 
 const handleError = (err) => console.error(err);
 
-User.create(
-    {
-        username: 'TestUser',
-        email: 'user@test.com',
-        thoughts : ['one','two'],
-        friends : ['f1','f2']
-    },
-(err) => (err ? handleError(err) : console.log('Created new user'))
-);
+// User.create(
+//     {
+//         username: 'TestUser',
+//         email: 'user@test.com',
+//         thoughts : ['one','two'],
+//         friends : ['f1','f2']
+//     },
+// (err) => (err ? handleError(err) : console.log('Created new user'))
+// );
 
 module.exports = User;
