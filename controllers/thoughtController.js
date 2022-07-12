@@ -21,4 +21,18 @@ module.exports = {
         .then((dbThoughtData) => res.json(dbThoughtData))
         .catch((err) => res.status(500).json(err));
     },
+    deleteRhought(req,res) {
+      Thought.findOneAndDelete(
+        { username : req.params.username},
+        (err, result) => {
+          if (result) {
+            res.status(200).json(result);
+            console.log(`Deleted: ${result}`);
+          } else {
+            console.log('Uh Oh, something went wrong');
+            res.status(500).json({ error: 'Something went wrong' });
+          }
+        }
+      )
+    },
   };
