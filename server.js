@@ -12,37 +12,25 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 const connectionStringURI = `mongodb://localhost:27017/SN_db`;
-
+app.use(routes);
+  
 mongodb.connect(
-    connectionStringURI,
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    (err, client) => {
-      db = client.db();
+  connectionStringURI,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  (err, client) => {
+    db = client.db();
 
-      db.collection('userList').deleteMany({});
+    db.collection('userList').deleteMany({});
 
-      db.collection('userList').insertOne(data, (err, res) => {
-        if (err) {
-          return console.log(err);
-        }
-        console.log(res);
-      });
-  
-      app.listen(port, () => {
-        console.log(`Example app listening at http://localhost:${port}`);
-      });
-    }
+    db.collection('userList').insertOne(data, (err, res) => {
+      if (err) {
+        return console.log(err);
+      }
+      console.log(res);
+    });
+
+    app.listen(port, () => {
+      console.log(`Example app listening at http://localhost:${port}`);
+    });
+  }
 );
-
-app.use(express.json());
-
-app.get('/users', (req, res) => {
-    db.collection('userList')
-      .find()
-      .toArray((err, results) => {
-        if (err) throw err;
-        res.send(results);
-      });
-  });
-  
-  
