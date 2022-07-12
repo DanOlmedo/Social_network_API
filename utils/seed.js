@@ -10,7 +10,7 @@ connection.once('open', async () => {
     // await Thought.deleteMany({});
     // await Reaction.deleteMany({});
     
-    await User.collection.insertMany(users);
+    await User.collection.insertMany([users]);
     // await Thought.collection.insertMany(thoughts);
     // await Reaction.collection.insertMany(reactions);
   

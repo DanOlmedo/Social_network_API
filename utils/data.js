@@ -1,3 +1,17 @@
+const users = [
+    {'Username' : 'User1', 'Email' : 'user1@test.com', 'Thought' : 'thought 1'},
+    {'Username' : 'User2', 'Email' : 'user2@test.com', 'Thought' : 'thought 2'},
+    {'Username' : 'User3', 'Email' : 'user3@test.com', 'Thought' : 'thought 3'},
+    {'Username' : 'User4', 'Email' : 'user4@test.com', 'Thought' : 'thought 4'},
+    {'Username' : 'User5', 'Email' : 'user5@test.com', 'Thought' : 'thought 5'},
+]
+
+const params = [
+    'Username',
+    'Email',
+    'Thought'
+]
+
 const userNames = [
     'User1',
     'User2',
@@ -22,12 +36,24 @@ const thoughts = [
     'thought 5',
 ];
 
-const users = [];
+// const entries = new Map([
+//     userNames,
+//     emails,
+//     thoughts
+// ]);
 
-for (let i = 0; i < userNames.length; i++) {
-    users.push(userNames[i]);
-    users.push(emails[i]);
-    users.push(thoughts[i]);
-};
+// const users = Object.fromEntries(entries);
+
+// for (let i = 0; i < userNames.length; i++) {
+//     users.push(userNames[i]);
+//     users.push(emails[i]);
+//     users.push(thoughts[i]);
+// };
+
+// const users = {};
+
+//     params.forEach((element,index) => {
+//     users[element] = userNames[index], emails[index], thoughts[index]
+// })
 
 module.exports = { users };
