@@ -34,5 +34,21 @@ module.exports = {
           }
         }
       )
-    }
+    },
+    updateReaction(req,res) {
+      reactionSchema.findOneAndUpdate(
+        { reactionBody : 'testOne'},
+        { reactionBody : req.params.newReactionBody },
+        { new : true},
+        (err,result) => {
+          if (result) {
+            res.status(200).json(result);
+            console.log(`Updated: ${result}`);
+          } else {
+            console.log('Uh Oh, something went wrong');
+            res.status(500).json({ message: 'something went wrong' });
+          }
+        }
+      )
+    },
   };
