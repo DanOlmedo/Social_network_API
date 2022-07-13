@@ -21,7 +21,7 @@ module.exports = {
         .then((dbThoughtData) => res.json(dbThoughtData))
         .catch((err) => res.status(500).json(err));
     },
-    deleteRhought(req,res) {
+    deleteThought(req,res) {
       Thought.findOneAndDelete(
         { username : req.params.username},
         (err, result) => {
