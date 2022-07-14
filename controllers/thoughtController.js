@@ -23,7 +23,7 @@ module.exports = {
     },
     deleteThought(req,res) {
       Thought.findOneAndDelete(
-        { username : req.params.username},
+        { thoughtId : req.params.thoughtId},
         (err, result) => {
           if (result) {
             res.status(200).json(result);
@@ -38,7 +38,7 @@ module.exports = {
     updateThought(req,res) {
       Thought.findOneAndUpdate(
         { username : 'testOne'},
-        { username : req.params.newUsername },
+        { thoughtText : req.body.thoughtText },
         { new : true},
         (err,result) => {
           if (result) {

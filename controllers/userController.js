@@ -23,7 +23,7 @@ module.exports = {
     },
     deleteUser(req,res) {
       User.findOneAndDelete(
-        { username : req.params.username},
+        { username : req.params.userId},
         (err, result) => {
           if (result) {
             res.status(200).json(result);
